@@ -6,7 +6,7 @@ RUN		apk update && \
 		mkdir -p /var/lib/mysql
 
 # COPY	/srcs/telegraf.conf		/etc/telegraf/
-COPY	/srcs/my.cnf			/etc/mysql
+COPY	/srcs/my.cnf			/etc/mysql/
 COPY	/srcs/start.sh			/
 
 EXPOSE 3306

@@ -5,13 +5,13 @@
 mysql_install_db --user=root --datadir=/var/lib/mysql
 
 # Invoking "mysqld" will start the MySQL server. Terminating "mysqld" will shutdown the MySQL server.
-mysqld --user=root & sleep 5
+mysqld & sleep 5
 
 # Create Wordpress database.
-mysql -u root --execute="CREATE DATABASE wordpress;"
+mysql -u root -e "CREATE DATABASE wordpress;"
 
 # Create new user "root" with password "toor" and give permissions.
-mysql -u root --execute="CREATE USER 'root'@'%' IDENTIFIED BY 'toor'; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION; USE wordpress; FLUSH PRIVILEGES;"
+mysql -u root -e "CREATE USER 'root'@'%' IDENTIFIED BY 'toor'; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION; USE wordpress; FLUSH PRIVILEGES;"
 
 # Start Telegraf and sleep infinity for avoid container to stop.
 # telegraf & sleep infinite

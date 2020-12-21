@@ -15,6 +15,7 @@ RUN		mkdir /etc/nginx/ssl \
 		&& openssl req -new -key /etc/nginx/ssl/private.key -out /etc/nginx/ssl/server.csr -subj "/C=JP/ST=Tokyo/L=Roppongi/O=42tokyo/OU=/CN=localhost" \
 		&& openssl x509 -days 365 -req -signkey /etc/nginx/ssl/private.key -in /etc/nginx/ssl/server.csr -out /etc/nginx/ssl/server.crt
 
+# Create a directory to store nginx.pid -- https://github.com/gliderlabs/docker-alpine/issues/185
 RUN		mkdir -p /run/nginx
 
 #COPY	/srcs/telegraf.conf			/etc/telegraf/

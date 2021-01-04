@@ -1,3 +1,3 @@
 #!/bin/sh
 
-php-fpm7 && nginx -g 'daemon off;'
+telegraf & php-fpm7 && nginx -g 'daemon off;'

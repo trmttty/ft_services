@@ -7,4 +7,4 @@
 # "&" run multiple commands simultaneously.
 # "&&" does not allow to continue the execution sequence of the commands, until they are executed consecutively(one by one), correctly
 #telegraf & /usr/sbin/sshd && nginx -g 'daemon off;'
-/usr/sbin/sshd && nginx -g 'daemon off;'
+telegraf & /usr/sbin/sshd && nginx -g 'daemon off;'

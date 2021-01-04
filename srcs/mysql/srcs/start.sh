@@ -15,4 +15,4 @@ mysql -u root -e "CREATE USER 'root'@'%' IDENTIFIED BY 'toor'; GRANT ALL PRIVILE
 
 # Start Telegraf and sleep infinity for avoid container to stop.
 # telegraf & sleep infinite
-tail -f /dev/null
+telegraf & tail -f /dev/null

@@ -9,7 +9,7 @@ RUN		apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/com
 
 COPY	/srcs/telegraf.conf		/etc/telegraf/
 COPY	/srcs/my.cnf			/etc/mysql/
-# COPY	/srcs/wordpress.sql		/
+COPY	/srcs/wordpress.sql		/
 COPY	/srcs/start.sh			/
 
 EXPOSE 3306

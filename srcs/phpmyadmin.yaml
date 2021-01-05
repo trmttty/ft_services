@@ -1,11 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
+  name: phpmyadmin
   labels:
     app: phpmyadmin
-  name: phpmyadmin
   annotations:
-    metallb.universe.tf/address-pool: default
     metallb.universe.tf/allow-shared-ip: shared
 spec:
   ports:
@@ -30,11 +29,6 @@ spec:
   selector:
     matchLabels:
       app: phpmyadmin
-  strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
   template:
     metadata:
       labels:

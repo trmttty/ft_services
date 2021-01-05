@@ -46,7 +46,9 @@ spec:
         - containerPort: 21
         - containerPort: 30021
         livenessProbe:
-          tcpSocket:
-            port: 21
-          initialDelaySeconds: 30
-          periodSeconds: 10
+          exec:
+            command:
+            - /bin/sh
+            - /healthcheck.sh
+          initialDelaySeconds: 15
+          periodSeconds: 5

@@ -24,6 +24,7 @@ COPY	/srcs/telegraf.conf			/etc/telegraf/
 COPY	/srcs/nginx.conf			/etc/nginx/
 COPY	/srcs/index.html			/var/www/
 COPY	/srcs/start.sh				/
+COPY	/srcs/healthcheck.sh		/
 
 EXPOSE	80 443 22
 

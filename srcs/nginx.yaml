@@ -51,8 +51,9 @@ spec:
         - containerPort: 443
         - containerPort: 22
         livenessProbe:
-          httpGet:
-            path: /index.html
-            port: 80
-          initialDelaySeconds: 30
-          periodSeconds: 10
+          exec:
+            command:
+            - /bin/sh
+            - /healthcheck.sh
+          initialDelaySeconds: 15
+          periodSeconds: 5

@@ -11,6 +11,7 @@ COPY	/srcs/telegraf.conf			/etc/telegraf/
 COPY	/srcs/grafana.db			/usr/share/grafana/data/
 COPY	/srcs/custom.ini			/usr/share/grafana/conf/
 COPY	/srcs/start.sh				/
+COPY	/srcs/healthcheck.sh		/
 
 WORKDIR	/usr/share/grafana
 

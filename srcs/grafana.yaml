@@ -39,9 +39,9 @@ spec:
         imagePullPolicy: Never
         name: grafana
         livenessProbe:
-          httpGet:
-            path: /api/health
-            port: 3000
-            scheme: HTTPS
-          initialDelaySeconds: 30
-          periodSeconds: 10
+          exec:
+            command:
+            - /bin/sh
+            - /healthcheck.sh
+          initialDelaySeconds: 15
+          periodSeconds: 5

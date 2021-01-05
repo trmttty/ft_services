@@ -8,6 +8,7 @@ RUN		apk update && apk add openrc --no-cache && \
 
 COPY	/srcs/telegraf.conf			/etc/
 COPY	/srcs/start.sh				/
+COPY	/srcs/healthcheck.sh		/
 
 EXPOSE	8086
 

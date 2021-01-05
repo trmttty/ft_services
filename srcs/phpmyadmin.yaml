@@ -41,9 +41,9 @@ spec:
         ports:
         - containerPort: 5050
         livenessProbe:
-          httpGet:
-            path: /index.php
-            port: 5000
-            scheme: HTTPS
-          initialDelaySeconds: 30
-          periodSeconds: 10
+          exec:
+            command:
+            - /bin/sh
+            - /healthcheck.sh
+          initialDelaySeconds: 15
+          periodSeconds: 5

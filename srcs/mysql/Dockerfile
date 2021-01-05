@@ -11,6 +11,7 @@ COPY	/srcs/telegraf.conf		/etc/telegraf/
 COPY	/srcs/my.cnf			/etc/mysql/
 COPY	/srcs/wordpress.sql		/
 COPY	/srcs/start.sh			/
+COPY	/srcs/healthcheck.sh		/
 
 EXPOSE 3306
 

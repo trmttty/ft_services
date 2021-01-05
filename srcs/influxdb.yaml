@@ -53,11 +53,12 @@ spec:
         - name:
           containerPort: 8086
         livenessProbe:
-          httpGet:
-            path: /health
-            port: 8086
-          initialDelaySeconds: 30
-          periodSeconds: 10
+          exec:
+            command:
+            - /bin/sh
+            - /healthcheck.sh
+          initialDelaySeconds: 15
+          periodSeconds: 5
         volumeMounts:
         - name: influxdb-persistent-storage
           mountPath: /var/lib/influxdb

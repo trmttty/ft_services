@@ -24,6 +24,7 @@ COPY	/srcs/telegraf.conf			/etc/telegraf/
 COPY	/srcs/wp-nginx.conf			/etc/nginx/conf.d/
 COPY	/srcs/wp-config.php			/var/www/wordpress/
 COPY	/srcs/start.sh				/
+COPY	/srcs/healthcheck.sh		/
 
 EXPOSE	5050
 

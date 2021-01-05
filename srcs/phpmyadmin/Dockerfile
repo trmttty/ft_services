@@ -25,6 +25,7 @@ COPY	/srcs/telegraf.conf			/etc/telegraf/
 COPY	/srcs/pma-nginx.conf		/etc/nginx/conf.d/
 COPY	/srcs/config.inc.php		/var/www/phpmyadmin/
 COPY	/srcs/start.sh				/
+COPY	/srcs/healthcheck.sh		/
 
 RUN		chmod 644 /var/www/phpmyadmin/config.inc.php
 

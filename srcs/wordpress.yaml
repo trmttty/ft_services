@@ -41,3 +41,10 @@ spec:
         name: wordpress
         ports:
         - containerPort: 5050
+        livenessProbe:
+          httpGet:
+            path: /index.php
+            port: 5050
+            scheme: HTTPS
+          initialDelaySeconds: 30
+          periodSeconds: 1

@@ -13,7 +13,7 @@ mysqld & sleep 5
 mysql -u root -e "CREATE DATABASE wordpress;"
 
 # Import previously backed up database to MariaDB database server (wordpress < /wordpress.sql).
-mysql -u root wordpress < wordpress.sql
+# mysql -u root wordpress < wordpress.sql
 
 # Create new user "root" with password "toor" and give permissions.
 mysql -u root -e "CREATE USER 'root'@'%' IDENTIFIED BY 'toor'; GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION; USE wordpress; FLUSH PRIVILEGES;"

@@ -37,6 +37,7 @@ spec:
       app: nginx
   template:
     metadata:
+      name: nginx
       labels:
         app: nginx
     spec:
@@ -46,3 +47,13 @@ spec:
           imagePullPolicy: Never
           ports:
           - containerPort: 80
+          - containerPort: 443
+          - containerPort: 22
+        livenessProbe:
+          httpGet:
+            path: /index.html
+            port: 80
+          tcpSocket:
+            port: 21
+          initialDelaySeconds: 30
+          periodSeconds: 10

@@ -44,4 +44,12 @@ spec:
       - image: my_phpmyadmin
         imagePullPolicy: Never
         name: phpmyadmin
-
+        ports:
+        - containerPort: 5050
+        livenessProbe:
+          httpGet:
+            path: /index.php
+            port: 5000
+            scheme: HTTPS
+          initialDelaySeconds: 30
+          periodSeconds: 10

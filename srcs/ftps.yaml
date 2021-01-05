@@ -8,14 +8,14 @@ metadata:
     metallb.universe.tf/allow-shared-ip: shared
 spec:
   ports:
-  - name: data
+  - name: ftps-data
     port: 20
     targetPort: 20
   - name: ftps
     port: 21
     protocol: TCP
     targetPort: 21
-  - name: ftps-pasv
+  - name: ftps-passive
     port: 30021
     protocol: TCP
     targetPort: 30021

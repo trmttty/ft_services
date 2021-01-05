@@ -17,15 +17,15 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
+  name: mysql-pv-claim
   labels:
     app: mysql
-  name: mysql-pvc
 spec:
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
+      storage: 10Gi
 
 ---
 
@@ -64,8 +64,8 @@ spec:
           periodSeconds: 10
         volumeMounts:
         - name: mysql-persistent-storage
-          mountPath: var/lib/mysql
+          mountPath: /var/lib/mysql
       volumes:
-        - name: mysql-persistent-storage
-          persistentVolumeClaim:
-            claimName: mysql-pvc
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim

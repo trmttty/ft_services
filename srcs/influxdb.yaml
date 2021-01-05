@@ -17,15 +17,15 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
+  name: influxdb-pv-claim
   labels:
     app: influxdb
-  name: influxdb-pvc
 spec:
   accessModes:
   - ReadWriteOnce
   resources:
     requests:
-      storage: 5Gi
+      storage: 10Gi
 
 ---
 
@@ -69,4 +69,4 @@ spec:
       volumes:
         - name: influxdb-persistent-storage
           persistentVolumeClaim:
-            claimName: influxdb-pvc
+            claimName: influxdb-pv-claim

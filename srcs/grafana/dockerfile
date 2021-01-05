@@ -1,9 +1,15 @@
 FROM	alpine
 
-RUN		apk add grafana telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted --no-cache
+RUN		apk update && apk add openssl --no-cache && \
+		apk add grafana telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted --no-cache
+
+RUN		openssl genrsa -out /etc/grafana.key 2048 \
+		&& openssl req -new -key /etc/grafana.key -out /etc/grafana.csr -subj "/C=JP/ST=Tokyo/L=Roppongi/O=42tokyo/OU=/CN=localhost" \
+		&& openssl x509 -days 365 -req -signkey /etc/grafana.key -in /etc/grafana.csr -out /etc/grafana.crt
 
 COPY	/srcs/telegraf.conf			/etc/telegraf/
 COPY	/srcs/grafana.db			/usr/share/grafana/data/
+COPY	/srcs/custom.ini			/usr/share/grafana/conf/
 COPY	/srcs/start.sh				/
 
 WORKDIR	/usr/share/grafana

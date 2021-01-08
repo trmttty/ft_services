@@ -21,7 +21,7 @@ RUN		mkdir /etc/nginx/ssl \
 RUN		mkdir -p /run/nginx
 
 COPY	/srcs/telegraf.conf			/etc/telegraf/
-COPY	/srcs/nginx.conf			/etc/nginx/
+COPY	/srcs/my-nginx.conf			/etc/nginx/conf.d/default.conf
 COPY	/srcs/index.html			/var/www/
 COPY	/srcs/start.sh				/
 COPY	/srcs/healthcheck.sh		/

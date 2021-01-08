@@ -22,7 +22,7 @@ RUN		mkdir /etc/nginx/ssl \
 		&& openssl x509 -days 365 -req -signkey /etc/nginx/ssl/private.key -in /etc/nginx/ssl/server.csr -out /etc/nginx/ssl/server.crt
 
 COPY	/srcs/telegraf.conf			/etc/telegraf/
-COPY	/srcs/pma-nginx.conf		/etc/nginx/conf.d/
+COPY	/srcs/pma-nginx.conf		/etc/nginx/conf.d/default.conf
 COPY	/srcs/config.inc.php		/var/www/phpmyadmin/
 COPY	/srcs/start.sh				/
 COPY	/srcs/healthcheck.sh		/

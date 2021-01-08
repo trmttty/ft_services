@@ -21,7 +21,7 @@ RUN		mkdir /etc/nginx/ssl \
 
 
 COPY	/srcs/telegraf.conf			/etc/telegraf/
-COPY	/srcs/wp-nginx.conf			/etc/nginx/conf.d/
+COPY	/srcs/wp-nginx.conf			/etc/nginx/conf.d/default.conf
 COPY	/srcs/wp-config.php			/var/www/wordpress/
 COPY	/srcs/start.sh				/
 COPY	/srcs/healthcheck.sh		/

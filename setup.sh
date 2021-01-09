@@ -1,11 +1,8 @@
-# Kill all processes.
 minikube delete
 
-# Start minikube.
 minikube start --driver=docker --cpus=2
 # minikube start --driver=virtualbox --cpus=2
 
-# Use the docker daemon from minikube.
 eval $(minikube docker-env)
 # eval $(minikube -p minikube docker-env)
 

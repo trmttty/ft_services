@@ -2,7 +2,7 @@ FROM	alpine
 
 RUN		apk update && apk add vsftpd openssl --no-cache && \
 		apk add telegraf --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ --allow-untrusted --no-cache && \
-		echo "root:toor" | chpasswd 
+		echo "root:password" | chpasswd 
 		
 # Create a ssl certification for vsftpd
 RUN		openssl genrsa -out /etc/ssl/private/vsftpd.key 2048 \

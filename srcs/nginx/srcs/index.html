@@ -9,32 +9,64 @@
   <body>
   <section class="section">
     <div class="container">
-      <section class="hero is-primary">
+      <section class="hero">
         <div class="hero-body">
           <div class="container">
-            <h1 class="title">FT_SERVICES</h1>
-            <h2 class="subtitle">This is a System Administration and Networking project</h2>
+            <h1 class="title has-text-primary has-text-centered">FT_SERVICES</h1>
           </div>
         </div>
       </section>
       <br/>
-      <div class="notification is-primary">
-        <a href="https://192.168.49.150:5050/wp-admin/" target="_blank">wordpress</a>
-        <br/><br/>
-        <p><em>user: admin</em></p>
-        <p><em>password: password</em></p><br/>
+
+      <div class="columns">
+        <div class="column is-one-third">
+          <div class="notification is-primary">
+            <p class="is-size-4 has-text-weight-bold"><a href="https://192.168.49.150:5050/wp-admin/" target="_blank">Wordpress</a></p>
+            <br/>
+            <p>port: 5050</p>
+            <p>user: admin</p>
+            <p>password: password</p>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="notification is-primary">
+            <p class="is-size-4 has-text-weight-bold"><a href="https://192.168.49.150:5000" target="_blank">phpMyAdmin</a></p>
+            <br/>
+            <p>port: 5000</p>
+            <p>user: root</p>
+            <p>password: password</p>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="notification is-primary">
+            <p class="is-size-4 has-text-weight-bold"><a href="https://192.168.49.150:3000" target="_blank">Grafana</a></p>
+            <br/>
+            <p>port: 3000</p>
+            <p>user: admin</p>
+            <p>password: password</p>
+          </div>
+        </div>
       </div>
-      <div class="notification is-primary">
-        <a href="https://192.168.49.150:5000" target="_blank">phpMyAdmin</a>
-        <br/><br/>
-        <p><em>user: root</em></p>
-        <p><em>password: password</em></p>
-      </div>
-      <div class="notification is-primary">
-        <a href="https://192.168.49.150:3000" target="_blank">Grafana</a>
-        <br/><br/>
-        <p><em>user: admin</em></p>
-        <p><em>password: password</em></p>
+
+      <div class="columns">
+        <div class="column is-one-third">
+          <div class="notification is-primary">
+            <p class="is-size-4 has-text-weight-bold">FTPS</p>
+            <br/>
+            <p>port: 21</p>
+            <p>user: root</p>
+            <p>password: password</p>
+          </div>
+        </div>
+        <div class="column is-one-third">
+          <div class="notification is-primary">
+            <p class="is-size-4 has-text-weight-bold">nginx</p>
+            <br/>
+            <p>port: 22</p>
+            <p>user: root</p>
+            <p>password: password</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

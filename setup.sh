@@ -2,12 +2,12 @@
 minikube delete
 
 # Start minikube.
-#minikube start --driver=docker
-minikube start --driver=virtualbox
+minikube start --driver=docker --cpus=2
+# minikube start --driver=virtualbox --cpus=2
 
 # Use the docker daemon from minikube.
-#eval $(minikube docker-env)
-eval $(minikube -p minikube docker-env)
+eval $(minikube docker-env)
+# eval $(minikube -p minikube docker-env)
 
 # Build docker images.
 docker build -t my_nginx srcs/nginx > /dev/null 2>&1
